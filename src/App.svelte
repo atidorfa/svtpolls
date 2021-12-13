@@ -1,11 +1,18 @@
 <script>
-
+	import Header from "./componets/Header.svelte";
+	import Footer from "./componets/Footer.svelte";
 </script>
 
+
+<Header />
 <main>
-	<h1>Hello bros!</h1>
+	
 </main>
+<Footer />
 
 <style>
-
+	main {
+		max-width: 960px;
+		margin: 40px auto;
+	}
 </style> 
