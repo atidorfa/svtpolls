@@ -1,7 +1,8 @@
 <script>
 	import Header from "./componets/Header.svelte";
 	import Footer from "./componets/Footer.svelte";
-	import Tab from "./shared_components/Tabs.svelte";
+	import CreatePollForm from "./componets/CreatePollForm.svelte";
+	import Tabs from "./shared_components/Tabs.svelte";
 
 	//tabs
 	let items = ['Current Polls', 'Add New Poll'];
@@ -15,11 +16,11 @@
 
 <Header />
 <main>
-	<Tab {items} {activeItem} on:tabChange={tabChange} />
+	<Tabs {items} {activeItem} on:tabChange={tabChange} />
 	{#if activeItem === 'Current Polls'}
 		<p>Lista de memes</p>
 	{:else if activeItem === 'Add New Poll'}
-		<p>Agregar meme</p>
+		<CreatePollForm />
 	{/if}
 </main>
 <Footer />
