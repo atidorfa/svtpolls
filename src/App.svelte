@@ -2,12 +2,13 @@
 	import Header from "./componets/Header.svelte";
 	import Footer from "./componets/Footer.svelte";
 	import CreatePollForm from "./componets/CreatePollForm.svelte";
-	import PollList from "./componets/PollList.svelte";
 	import Tabs from "./shared_components/Tabs.svelte";
+	import NotiConsultores from "./componets/NotiConsultores.svelte";
+	import NotiClientes from "./componets/NotiClientes.svelte";
 
 	// tabs
-	let items = ['Current Polls', 'Add New Poll'];
-	let activeItem = 'Current Polls';
+	let items = ['NotiConsultores', 'NotiClientes'];
+	let activeItem = 'NotiConsultores';
 
 	const tabChange = (e) => {
 		activeItem = e.detail;
@@ -29,7 +30,7 @@
 		const poll = e.detail;
 		polls = [poll, ...polls]
 		console.log(polls)
-		activeItem = 'Current Polls'
+		activeItem = 'NotiConsultores'
 	}
 
 	const handleVote = (e) => {
@@ -51,10 +52,10 @@
 <Header />
 <main>
 	<Tabs {items} {activeItem} on:tabChange={tabChange} />
-	{#if activeItem === 'Current Polls'}
-		<PollList {polls} on:vote={handleVote} />
-	{:else if activeItem === 'Add New Poll'}
-		<CreatePollForm on:add={handleAdd}/>
+	{#if activeItem === 'NotiConsultores'}
+		<NotiConsultores />
+	{:else if activeItem === 'NotiClientes'}
+		<NotiClientes />
 	{/if}
 </main>
 <Footer />
